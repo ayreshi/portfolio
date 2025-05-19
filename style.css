@@ -1,0 +1,510 @@
+/* General Reset and Box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and Background */
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgb(148, 148, 148);
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+nav:hover {
+    background-color: rgb(76, 76, 76); /* Darker background when hovered */
+}
+
+/* Navigation list */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation items */
+nav ul li {
+    margin-right: 30px;
+    position: relative;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+/* Navigation links */
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect on navigation links */
+nav ul li a:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Active link state (optional for active page highlighting) */
+nav ul li a.active {
+    color: rgb(255, 165, 0); /* Orange color for active link */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+
+    nav ul li {
+        margin-bottom: 15px; /* Space between vertical links */
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Max width to ensure responsiveness */
+    margin: 0 auto;
+}
+
+.welcome-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.welcome-text h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.welcome-text p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    animation: fadeIn 2s ease-out;
+}
+
+.cta-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: #5e5e5e;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: rgb(148, 148, 148);
+}
+
+.photo {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* You can adjust the size of the photo */
+    border-radius: 10px; /* Add rounded corners to your photo */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Optional shadow for extra effect */
+}
+
+/* About Section */
+.about {
+    background-color: #2d2d2d;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 300;
+    text-align: justify;  /* Justifies the text */
+}
+
+/* Work Experience Section */
+.work-experience {
+    background-color: #3e3e3e;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.work-experience h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.experience-item {
+    background-color: #000000;
+    margin: 15px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.experience-item p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #222;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.skills-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.skill-group {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.group-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.skill-item {
+    text-align: left;
+}
+
+.skill-item h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space out the skill name and percentage */
+    align-items: center;
+}
+
+.skill-item .percentage {
+    font-size: 1.2rem;
+    color: #ccc; /* Lighter color for the percentage */
+    font-weight: bold;
+}
+
+/* 2-Column Layout on Larger Screens */
+@media (min-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet and above */
+    }
+}
+
+@media (min-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for large screens */
+    }
+}
+
+.projects {
+    padding: 50px 20px;
+    background-color: #3e3e3e;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 projects per row */
+    gap: 30px;
+}
+
+.project-item {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    color: #f1f1f1; /* Improved contrast */
+    font-weight: bold;
+}
+
+.project-item p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Styling the link for Project 1 */
+.project-link {
+    display: inline-block;
+    background-color: #5e5e5e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: rgb(43, 42, 42);;
+}
+
+/* Optional: style video container */
+.video-container {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr; /* 2 projects per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* 1 project per row on small screens */
+    }
+}
+
+
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #222;
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.testimonial {
+    background-color: #333;
+    margin: 15px 0;
+    padding: 20px;
+    width: 70%;  /* Adjusted width */
+    max-width: 800px;  /* To ensure it doesn’t stretch too wide */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ccc;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.testimonial cite {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact button {
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.767);;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: rgb(76, 76, 76);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #000000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
